@@ -1,0 +1,32 @@
+{
+  "Iniciante": [
+    {
+      "pergunta": "Na estrada de terra, qual técnica ajuda a manter a estabilidade?",
+      "opcoes": ["Ficar em pé nas pedaleiras", "Sentar o mais atrás possível", "Frear forte nas curvas"],
+      "correta": 0,
+      "explicacao": "Ficar em pé baixa o centro de gravidade (através das pedaleiras) e permite que a moto se mova sob você."
+    },
+    {
+      "pergunta": "O que fazer ao encontrar muita poeira (fofa) à frente?",
+      "opcoes": ["Parar imediatamente", "Manter aceleração constante e guidão firme", "Mudar de faixa bruscamente"],
+      "correta": 1,
+      "explicacao": "Aceleração constante ajuda a frente da moto a 'flutuar' sobre o terreno irregular."
+    }
+  ],
+  "Intermediario": [
+    {
+      "pergunta": "Qual o perigo de passar sobre faixas pintadas em dia de chuva?",
+      "opcoes": ["Nenhum perigo", "A tinta fica extremamente escorregadia", "O pneu gasta mais rápido"],
+      "correta": 1,
+      "explicacao": "A tinta de sinalização não tem a mesma porosidade do asfalto, tornando-se um 'sabão' quando molhada."
+    }
+  ],
+  "Avancado": [
+    {
+      "pergunta": "O que é o 'Trail Braking' na pilotagem avançada?",
+      "opcoes": ["Frear apenas com o freio traseiro", "Manter o freio dianteiro até o ápice da curva", "Soltar o freio totalmente antes de inclinar"],
+      "correta": 1,
+      "explicacao": "Técnica usada para carregar peso na frente da moto, melhorando a geometria e a aderência ao entrar na curva."
+    }
+  ]
+}

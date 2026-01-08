@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wings - Motorcycle Training</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app-container">
+        
+        <div id="damage-overlay"></div>
+        <img id="explosion-effect" src="assets/explosao.gif" class="hidden" alt="Explosão">
+        
+        <canvas id="gameCanvas"></canvas>
+
+        <canvas id="fireworksCanvas"></canvas>
+
+        <header id="hud-header">
+            <img src="assets/interface/Logo_wings.png" id="logo-main" alt="Wings Logo">
+            
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-label">NÍVEL</span>
+                    <span class="stat-value" id="ui-nivel">INICIANTE</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">VIDAS</span>
+                    <span class="stat-value" id="ui-vidas">3</span>
+                </div>
+            </div>
+
+            <div class="progress-track">
+                <div id="progress-fill"></div>
+            </div>
+            <div class="progress-text" id="ui-progresso">Carregando...</div>
+        </header>
+
+        <div id="quiz-overlay">
+            <div class="question-card">
+                <div id="timer-container"><div id="timer-bar"></div></div>
+                <p id="question-text">Preparando motor...</p>
+            </div>
+            <div class="options-grid">
+                <button class="btn-option" id="btn-opt-0" onclick="Game.responder(0)"></button>
+                <button class="btn-option" id="btn-opt-1" onclick="Game.responder(1)"></button>
+                <button class="btn-option" id="btn-opt-2" onclick="Game.responder(2)"></button>
+            </div>
+        </div>
+
+        <div id="screen-intro" class="full-screen-modal hidden">
+            <div class="modal-body">
+                <img src="assets/interface/game.png" style="width: 100%; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+                <h1 class="premium-title">WINGS GAME</h1>
+                <div style="text-align: left; color: #fff; font-size: 13px; line-height: 1.5; margin-bottom: 25px; opacity: 0.9;">
+                    <p style="margin-bottom: 10px;">🏁 <strong>O DESAFIO:</strong><br>Responda corretamente e desvie dos obstáculos para provar que você domina a estrada.</p>
+                    <p>🏆 <strong>RECOMPENSAS REAIS:</strong><br>
+                    Conclua os níveis para ganhar descontos no curso:<br>
+                    <span style="color: #D4AF37;">★ <strong>Iniciante:</strong> 5% OFF</span><br>
+                    <span style="color: #D4AF37;">★ <strong>Intermediário:</strong> 10% OFF</span><br>
+                    <span style="color: #D4AF37;">★ <strong>Avançado:</strong> 15% OFF</span></p>
+                </div>
+                <button class="btn-primary" onclick="Game.irParaGaragem()">ESCOLHER MINHA MOTO</button>
+            </div>
+        </div>
+
+        <div id="screen-garage" class="full-screen-modal hidden">
+            <div class="modal-body">
+                <h1 class="premium-title">GARAGEM WINGS</h1>
+                <p class="premium-subtitle">Escolha sua máquina</p>
+                <div id="garage-grid"></div>
+                <button id="btn-start-game" class="btn-primary" onclick="Game.iniciarJogoDoZero()">INICIAR TRAJETO</button>
+            </div>
+        </div>
+
+        <div id="modal-feedback" class="hidden">
+            <div class="modal-glass">
+                <img id="feedback-icon" src="" class="hidden">
+                <h2 id="feedback-title">RESULTADO</h2>
+                <p id="feedback-msg">Processando...</p>
+                <button id="btn-feedback-next" class="btn-primary" onclick="Game.proximaEtapa()" style="display:none">CONTINUAR</button>
+                <div id="action-buttons-container"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <audio id="sfx-win" src="assets/sons/acerto.mp3" preload="auto"></audio>
+    <audio id="sfx-lose" src="assets/sons/erro.mp3" preload="auto"></audio>
+
+    <script src="game.js"></script>
+</body>
+</html>
